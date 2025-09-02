@@ -1,0 +1,34 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+}
+
+.new-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 75vh;
+  width: 30vw;
+  box-shadow: 1px 1px 4px saddlebrown;
+  padding: 15px;
+  background-color: rgb(254, 233, 233);
+}
+
+.new-form input {
+  height: 40px;
+  width: 20rem;
+}
+
+.new-form button {
+  height: 40px;
+  width: 20rem;
+}
+
+h2 {
+  margin-left: 5rem;
+}

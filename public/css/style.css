@@ -1,0 +1,53 @@
+/* body {
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 500px;
+} */
+
+.navbar {
+  height: 4rem;
+  background-color: white;
+}
+
+.fa-wpexplorer {
+  color: navy;
+  font-size: 2.5rem;
+  margin-top: 5px;
+}
+
+.nav-link {
+  color: #222222 !important;
+  font-weight: 500 !important;
+}
+
+.f-info-socials,
+.f-info-links {
+  width: 100%;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.f-info-socials i {
+  font-size: 1.5rem;
+  margin-right: 0.3rem;
+}
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info {
+  text-align: center;
+  height: 8rem;
+  background-color: rgb(231, 231, 231);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}

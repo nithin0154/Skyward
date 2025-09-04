@@ -1,14 +1,17 @@
-/* body {
-  background-color: antiquewhite;
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 500 !important;
+  font-style: normal;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-left: 500px;
-} */
+  min-height: 100vh;
+}
 
 .navbar {
   height: 4rem;
   background-color: white;
+  padding: 1rem !important;
 }
 
 .fa-wpexplorer {
@@ -50,4 +53,78 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+/*cards*/
+
+.card {
+  border: none !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* .card:hover {
+  transition: 0.2s ease-in-out;
+  transform: scale(1.03);
+} */
+
+.row {
+  margin-bottom: 2rem !important;
+}
+
+.show-row {
+  margin-top: -1rem !important;
+}
+
+.conatiner {
+  margin: 1rem !important;
+  flex: 1;
+}
+
+.card-img-top {
+  width: 100% !important;
+  border-radius: 0.5rem !important;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 4px !important;
+}
+
+.card-text p {
+  font-size: 8px !important;
+}
+
+.card-text {
+  margin-top: 0.25rem !important;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.card-img-overlay {
+  opacity: none;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+
+/* New Page */
+
+.add-btn {
+  background-color: rgb(57, 57, 219) !important;
+  border: none !important;
+}
+.edit-btn {
+  background-color: rgb(57, 57, 219) !important;
+  border: none !important;
+}
+
+/* show Page */
+
+.show-img {
+  height: 40vh;
+  object-fit: cover;
 }

@@ -57,9 +57,10 @@ body {
 
 /*cards*/
 
-.card {
+.listing-card {
   border: none !important;
   margin-bottom: 1.5rem !important;
+  margin: 1rem !important;
 }
 
 /* .card:hover {
@@ -76,13 +77,13 @@ body {
 }
 
 .conatiner {
-  margin: 1rem !important;
+  margin: 1rem 2rem !important;
   flex: 1;
 }
 
 .card-img-top {
   width: 100% !important;
-  border-radius: 0.5rem !important;
+  border-radius: 0.8rem !important;
   object-fit: cover;
 }
 
@@ -127,4 +128,49 @@ body {
 .show-img {
   height: 40vh;
   object-fit: cover;
+}
+.review-card {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.review-card p {
+  margin: 0.5rem 0;
+}
+
+.review-card .star {
+  color: gold;
+  margin-left: 5px;
+}
+
+.review-card h5 {
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.review-card button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: grey;
+  float: right;
+  font-size: 1.2rem;
+}
+
+.review-card button i.delete {
+  transition: transform 0.2s ease;
+}
+
+.review-card button:hover i.delete {
+  transform: scale(1.2);
+}
+
+.card-body {
+  position: relative;
 }

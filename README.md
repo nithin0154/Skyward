@@ -1,6 +1,6 @@
 # 🏠 MERN Airbnb Clone (Without React)
 
-A **Full Stack Web Application** built using the **MERN stack** (MongoDB, Express.js, Node.js) with **server-side rendered templates (EJS / Handlebars / Pug)**, designed to replicate basic functionality of Airbnb — allowing users to list properties, browse available listings, book stays, and manage their bookings.
+A **Full Stack Web Application** built using the **MERN stack** (MongoDB, Express.js, Node.js) with **server-side rendered templates (EJS / Handlebars)**, designed to replicate basic functionality of Airbnb — allowing users to list properties, browse available listings, book stays, and manage their bookings.
 
 ---
 

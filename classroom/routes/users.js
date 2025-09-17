@@ -3,7 +3,7 @@ const router = express.Router();
 
 //Index
 router.get("/", (req, res) => {
-  res.send(`Get of users`);
+  res.render("index.ejs");
   console.log(req.cookies);
 });
 

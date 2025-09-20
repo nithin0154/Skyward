@@ -129,6 +129,7 @@ body {
   height: 40vh;
   object-fit: cover;
 }
+
 .review-card {
   padding: 1rem;
   display: flex;

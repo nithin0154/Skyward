@@ -13,7 +13,12 @@ const { isLoggedIn, isOwner, ValidateListing } = require("../middleware.js");
 router
   .route("/")
   .get(listingController.index)
-  .post(isLoggedIn,upload.single("listing[image]"), ValidateListing, wrapAsync(listingController.create));
+  .post(
+    isLoggedIn,
+    upload.single("listing[image]"),
+    ValidateListing,
+    wrapAsync(listingController.create)
+  );
 
 router.get("/new", isLoggedIn, listingController.newListing);
 
@@ -24,6 +29,7 @@ router
   .put(
     isLoggedIn,
     isOwner,
+    upload.single("listing[image]"),
     ValidateListing,
     wrapAsync(listingController.update)
   )

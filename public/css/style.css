@@ -175,3 +175,22 @@ body {
 .card-body {
   position: relative;
 }
+
+/* Image preview of the edit page  */
+
+.preview-img img {
+  margin-top: -1rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 5px black;
+}
+
+.preview-img h3 {
+  margin-bottom: -1rem;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  border-radius: 0.8rem;
+  box-shadow: 1px 1px 10px grey inset;
+}

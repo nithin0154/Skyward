@@ -63,6 +63,7 @@ async function main() {
 }
 
 app.set("view engine", "ejs");
+const port = 8080;
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
@@ -99,6 +100,14 @@ app.use("/", usersRouter);
 //search route
 app.use("/search", searchRouter);
 
+app.get("/privacy", (req, res) => {
+  res.render("others/privacy.ejs");
+});
+
+app.get("/terms", (req, res) => {
+  res.render("others/term.ejs");
+});
+
 app.all(/.*/, (req, res, next) => {
   next(new ExpressError(404, "Page Not Found"));
 });
@@ -112,6 +121,6 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("error.ejs", { message });
 });
 
-app.listen(8080, () => {
+app.listen(port, () => {
   console.log("server is running on : http://localhost:8080/listings");
 });

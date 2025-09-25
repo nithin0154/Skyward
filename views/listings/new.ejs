@@ -41,11 +41,30 @@
                     </div>
                 </div>
 
-                <div class="mb-3">
-                    <label for="listing[location]" class="form-label">Location</label>
-                    <input name="listing[location]" placeholder="Hyderbad,Telangana" class="form-control" type="text"
-                        required />
-                    <div class="invalid-feedback">Invalid Location</div>
+
+                <div class="row">
+                    <div class="mb-3  col-md-4">
+                        <label for="listing[location]" class="form-label">Location</label>
+                        <input name="listing[location]" placeholder="Hyderbad,Telangana" class="form-control"
+                            type="text" required />
+                        <div class="invalid-feedback">Invalid Location</div>
+                    </div>
+                    <div class="mb-3  col-md-8">
+                        <label for= "listing[category]" class="form-label">Category</label>
+                        <select class="form-control" id="category" name="listing[category]" required>
+                            <option value="">-- Select a Category --</option>
+                            <option value="Trending">Trending</option>
+                            <option value="Cities">Cities</option>
+                            <option value="Rooms">Rooms</option>
+                            <option value="Mountains">Mountains</option>
+                            <option value="Pools">Pools</option>
+                            <option value="Arctic">Arctic</option>
+                            <option value="Farms">Farms</option>
+                            <option value="Camping">Camping</option>
+                            <option value="Hotels">Hotels</option>
+                            <option value="Boats">Boats</option>
+                        </select>
+                    </div>
                 </div>
 
                 <br /><br />

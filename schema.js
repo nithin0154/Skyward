@@ -7,8 +7,25 @@ module.exports.listingSchema = Joi.object({
     location: Joi.string().required(),
     country: Joi.string().required(),
     price: Joi.number().required().min(0),
-    image: Joi.string().allow("", null),
-
+    image: Joi.object({
+      url: Joi.string().allow("", null),
+      filename: Joi.string().allow("", null),
+    }),
+    category: Joi.string()
+      .valid(
+        "Trending",
+        "Cities",
+        "Rooms",
+        "Mountains",
+        "Pools",
+        "Arctic",
+        "Farms",
+        "Camping",
+        "Hotels",
+        "Boats"
+      )
+      .required(),
+    // geometry removed since it's set later in the route
   }).required(),
 });
 

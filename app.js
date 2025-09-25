@@ -7,6 +7,7 @@ const app = express();
 const listingsRouter = require("./Routes/listings.js");
 const reviewsRouter = require("./Routes/reviews.js");
 const usersRouter = require("./Routes/user.js");
+const searchRouter = require("./Routes/search.js");
 const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
@@ -62,10 +63,6 @@ passport.use(new localStrat(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.get("/", (req, res) => {
-  res.send("Hi, I am root");
-});
-
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
@@ -82,6 +79,9 @@ app.use("/listings/:id/reviews", reviewsRouter);
 
 //User Router
 app.use("/", usersRouter);
+
+//search route
+app.use("/search", searchRouter);
 
 app.all(/.*/, (req, res, next) => {
   next(new ExpressError(404, "Page Not Found"));

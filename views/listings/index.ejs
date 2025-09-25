@@ -1,7 +1,65 @@
 <% layout('/layouts/boilerplate.ejs') -%>
 
     <body>
-        <h3>All Listings</h3>
+            <div id="filters">
+                <a href="/search/filter/Trending" class="filter">
+                    <div><i class="fa-solid fa-fire"></i></div>
+                    <p>Trending</p>
+                </a>
+
+                <a href="/search/filter/Cities" class="filter">
+                    <div><i class="fa-solid fa-mountain-city"></i></div>
+                    <p>Cities</p>
+                </a>
+
+                <a href="/search/filter/Rooms" class="filter">
+                    <div><i class="fa-solid fa-bed"></i></div>
+                    <p>Rooms</p>
+                </a>
+
+                <a href="/search/filter/Mountains" class="filter">
+                    <div><i class="fa-solid fa-mountain"></i></div>
+                    <p>Mountains</p>
+                </a>
+
+                <a href="/search/filter/Pools" class="filter">
+                    <div><i class="fa-solid fa-person-swimming"></i></div>
+                    <p>Pools</p>
+                </a>
+
+                <a href="/search/filter/Arctic" class="filter">
+                    <div><i class="fa-solid fa-igloo"></i></div>
+                    <p>Arctic</p>
+                </a>
+
+                <a href="/search/filter/Farms" class="filter">
+                    <div><i class="fa-solid fa-cow"></i></div>
+                    <p>Farms</p>
+                </a>
+
+                <a href="/search/filter/Camping" class="filter">
+                    <div><i class="fa-solid fa-campground"></i></div>
+                    <p>Camping</p>
+                </a>
+
+                <a href="/search/filter/Hotels" class="filter">
+                    <div><i class="fa-solid fa-hotel"></i></div>
+                    <p>Hotels</p>
+                </a>
+
+                <a href="/search/filter/Boats" class="filter">
+                    <div><i class="fa-solid fa-ship"></i></div>
+                    <p>Boats</p>
+                </a>
+
+                <!-- Tax toggle (keeps as div, not link) -->
+                <div class="tax-toggle">
+                    <div class="form-check form-switch form-check-reverse">
+                        <input class="form-check-input" type="checkbox" id="switchCheckReverse">
+                        <label class="form-check-label" for="switchCheckReverse">Show total after taxes</label>
+                    </div>
+                </div>
+            </div>
 
         <div class="row row-cols-xl-3 row-cols-md-2 row-cols-sm-1">
             <% for(let listing of allListings) { %>
@@ -11,10 +69,15 @@
                             style="height: 18rem">
                         <div class="card-img-overlay"></div>
                         <div class="card-body">
-                            <p class="card-text">
+                            <p class="card-text mb-0">
                                 <%= listing.title%>
-                                    <br>
-                                    &#8377; <%= listing.price.toLocaleString("en-IN") %>/ Night
+                                    <div class="without-tax">
+                                        &#8377;<%= listing.price.toLocaleString("en-IN") %>/ Night</div>
+                                    <div class="with-tax" style="display:none">&#8377; <%= (listing.price +
+                                            listing.price*0.18).toLocaleString("en-IN") %> / Night
+                                            <i class="tax-info">(Includes 18% GST)</i>
+                                    </div>
+
 
                             </p>
                         </div>
@@ -24,3 +87,21 @@
         </div>
 
     </body>
+    <script>
+
+        // toggle visibility on checkbox change
+        const taxToggle = document.getElementById("switchCheckReverse");
+        const withTax = document.getElementsByClassName("with-tax");
+        const withoutTax = document.getElementsByClassName("without-tax");
+
+        taxToggle.addEventListener("change", () => {
+            if (taxToggle.checked) {
+                for (let el of withTax) el.style.display = "block";
+                for (let el of withoutTax) el.style.display = "none";
+            } else {
+                for (let el of withTax) el.style.display = "none";
+                for (let el of withoutTax) el.style.display = "block";
+            }
+        });
+
+    </script>

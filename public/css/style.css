@@ -188,9 +188,89 @@ body {
   margin-bottom: -1rem;
 }
 
+/* Map Stylings */
+
 #map {
   height: 400px;
   width: 100%;
   border-radius: 0.8rem;
   box-shadow: 1px 1px 10px grey inset;
+}
+
+.marker {
+  background-image: url("https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Misecellanious */
+.add-link,
+.nav-link {
+  padding: 0.5rem 1rem !important;
+  border-radius: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+}
+
+.add-link,
+.nav-link:hover {
+  /* transform: translateY(-3px); */
+  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); */
+  background-color: rgba(128, 128, 128, 0.3);
+  color: navy !important;
+}
+
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  border-radius: 50px;
+  /* pill-shaped ends */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* smooth shadow */
+  width: 92vw;
+  /* shrink-wrap to content */
+  margin: 1rem auto;
+  /* center horizontally */
+}
+
+.filter {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-right: 2.5rem;
+  opacity: 0.7;
+}
+
+#filters a.filter {
+    text-decoration: none; /* removes underline */
+    color: inherit;        /* keeps text/icon color the same */
+    display: inline-block; /* ensures block-like layout */
+}
+
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.filter p {
+  font-size: 0.8rem;
+}
+
+.tax-toggle {
+  border: 1px solid grey;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  margin-left: 2rem;
+  width: max-content;
+  width: 15rem;
 }

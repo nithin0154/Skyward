@@ -28,12 +28,27 @@ let listingSchema = new Schema({
       type: String,
       enum: ["Point"],
       required: true,
-      default: "Point",
     },
     coordinates: {
       type: [Number],
       required: true,
     },
+  },
+  category: {
+    type: String,
+    enum: [
+      "Trending",
+      "Cities",
+      "Rooms",
+      "Mountains",
+      "Pools",
+      "Arctic",
+      "Farms",
+      "Camping",
+      "Hotels",
+      "Boats",
+    ],
+    required: true,
   },
 });
 

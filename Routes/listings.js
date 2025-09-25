@@ -38,4 +38,7 @@ router
 //Edit Route
 router.get("/:id/edit", isLoggedIn, isOwner, wrapAsync(listingController.edit));
 
+//serach route
+
+
 module.exports = router;

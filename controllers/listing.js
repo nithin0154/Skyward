@@ -18,8 +18,6 @@ module.exports.show = async (req, res) => {
     .populate({ path: "reviews", populate: { path: "author" } })
     .populate("owner");
   if (!listing) {
-    console.log(`entered the log`);
-
     req.flash("error", "Listing you trying to access doesn't exist or Deleted");
     return res.redirect("/listings");
   }
@@ -29,25 +27,26 @@ module.exports.show = async (req, res) => {
 module.exports.create = async (req, res, next) => {
   console.log(req.body.listing.location);
   console.log(`*************************`);
-
+  console.log(req.body.listing.category);
   let response = await geocodingclient
     .forwardGeocode({
       query: req.body.listing.location,
-      limit: 2,
+      limit: 1,
     })
     .send();
-  console.log(response);
+  // console.log(response);
   console.log(`***************************`);
 
   const { path, filename } = req.file;
   let url = path;
+
   const newListing = new Listing(req.body.listing);
   newListing.owner = req.user._id;
   newListing.image = { url, filename };
-  newListing.geomtry = response.body.features[0].geometry;
+  newListing.geometry = response.body.features[0].geometry;
+  newListing.category = req.body.listing.category;
   let savedListing = await newListing.save();
-  console.log(savedListing.geomtry.coordinates);
-
+  console.log(savedListing.geometry.coordinates);
   req.flash("success", "Listing Created Successfully!");
   res.redirect("/listings");
 };
@@ -87,3 +86,10 @@ module.exports.delete = async (req, res) => {
   req.flash("success", "Listing Deleted Successfully!");
   res.redirect("/listings");
 };
+
+
+module.exports.search= async(req,res)=>{
+  let text = req.query.q ;
+  console.log(text);
+  res.render("searchshow.ejs");
+}
